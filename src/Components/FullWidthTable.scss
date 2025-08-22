@@ -1,0 +1,41 @@
+.table-container {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-x: hidden; // Prevent horizontal scroll
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  th, td {
+    width: auto;
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box; // Important for strict layout
+  }
+
+  thead {
+    background-color: #f0f0f0;
+  }
+
+  tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .responsive-table th:nth-child(5),
+  .responsive-table td:nth-child(5),
+  .responsive-table th:nth-child(10),
+  .responsive-table td:nth-child(10) {
+    display: none;
+  }
+}
+
